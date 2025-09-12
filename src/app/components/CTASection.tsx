@@ -23,6 +23,8 @@ const CTASection = () => {
             next.
           </p>
 
+          {/* TODO: Uncomment this when the CTA is ready */}
+        {/* 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <Button
               size="lg"
@@ -41,7 +43,7 @@ const CTASection = () => {
               <Clock className="mr-2" />
               Watch 2-Minute Demo
             </Button>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
