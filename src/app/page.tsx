@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="font-sans flex flex-col min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans flex flex-col min-h-screen bg-background text-foreground">
       <Navigation />
       <HeroSection />
       <ProblemSection />
