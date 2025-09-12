@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "ServiceBay",
   description:
     "10x faster dispatch. Voice-powered service orders. Predictive repairs. Automated customer communication.",
+  icons: {
+    icon: "servicebay.svg",
+  },
 };
 
 export default function RootLayout({

@@ -52,7 +52,7 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
-            Key Features
+            Why choose us?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-body">
             Everything you need to run a modern, efficient fleet repair

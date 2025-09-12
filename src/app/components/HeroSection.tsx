@@ -1,5 +1,5 @@
-import { Button } from "@ui/button";
-import { ArrowRight, Play } from "lucide-react";
+"use client";
+import { motion } from "framer-motion";
 import DesktopMockup from "@/assets/desktop-mockup.png";
 import MobileMockup from "@/assets/mobile-mockup.png";
 import Image from "next/image";
@@ -17,7 +17,12 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="max-w-2xl">
+          <motion.div
+            className="max-w-2xl"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 border border-white/30 text-white font-medium">
                 🚛 AI-Powered Fleet Management
@@ -25,45 +30,69 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 leading-tight">
-              Your Techs Create
+              The AI-Native
               <br />
-              <span className="text-accent-foreground">Service Orders</span>
+              <span className="text-accent-foreground">Fleet Repair</span>
               <br />
-              in 2 Minutes. By Voice.
+              Platform
             </h1>
 
             <p className="text-xl md:text-2xl text-white/90 mb-8 font-body leading-relaxed">
-              Stop losing $10K/month in missed parts. Start billing everything.
+              10x faster dispatch. Voice-powered service orders. Predictive
+              repairs. Automated customer communication.
             </p>
 
             {/* Money Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <div className="text-center sm:text-left">
+              <motion.div
+                className="text-center sm:text-left"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.7 }}
+              >
                 <div className="text-3xl font-bold text-white font-heading">
                   $10,500
                 </div>
                 <div className="text-white/80 font-body">Monthly Net Gain</div>
-              </div>
-              <div className="text-center sm:text-left">
+              </motion.div>
+
+              <motion.div
+                className="text-center sm:text-left"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.7 }}
+              >
                 <div className="text-3xl font-bold text-white font-heading">
                   300+
                 </div>
                 <div className="text-white/80 font-body">
                   Shops Saving Money
                 </div>
-              </div>
-              <div className="text-center sm:text-left">
+              </motion.div>
+
+              <motion.div
+                className="text-center sm:text-left"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.7 }}
+              >
                 <div className="text-3xl font-bold text-white font-heading">
                   98%
                 </div>
                 <div className="text-white/80 font-body">
                   Parts Billing Rate
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative hidden lg:flex lg:items-center lg:justify-center">
+          {/* Right Column - Mockups */}
+          <motion.div
+            className="relative hidden lg:flex lg:items-center lg:justify-center"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             {/* Desktop Dashboard Mockup */}
             <div className="relative z-10">
               <Image
@@ -76,7 +105,12 @@ const HeroSection = () => {
             </div>
 
             {/* Mobile Mockup Overlay */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 z-20">
+            <motion.div
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 z-20"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
               <Image
                 src={MobileMockup}
                 alt="ServiceBay Mobile App"
@@ -84,8 +118,8 @@ const HeroSection = () => {
                 width={256}
                 height={500}
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -17,18 +17,27 @@ const CTASection = () => {
             <br />
             <span className="text-accent-foreground">Start Making More.</span>
           </h2>
-          
+
           <p className="text-xl md:text-2xl text-white/90 mb-12 font-body max-w-2xl mx-auto">
-            300+ shops are already saving $5,000/month. Your shop should be next.
+            300+ shops are already saving $5,000/month. Your shop should be
+            next.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <Button size="lg" variant="cta" className="text-xl px-10 py-5 font-semibold">
+            <Button
+              size="lg"
+              variant="cta"
+              className="text-xl px-10 py-5 font-semibold"
+            >
               <Calculator className="mr-3" />
               See Your Shop's Potential Savings
               <ArrowRight className="ml-3" />
             </Button>
-            <Button size="lg" variant="outline" className="text-xl px-10 py-5 bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-xl px-10 py-5 bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold"
+            >
               <Clock className="mr-2" />
               Watch 2-Minute Demo
             </Button>
@@ -36,16 +45,28 @@ const CTASection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-2xl font-bold text-white font-heading mb-2">Complete Setup</div>
-              <div className="text-white/80 font-body">We migrate everything</div>
+              <div className="text-2xl font-bold text-white font-heading mb-2">
+                Complete Setup
+              </div>
+              <div className="text-white/80 font-body">
+                We migrate everything
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white font-heading mb-2">$5K+ Guarantee</div>
-              <div className="text-white/80 font-body">Save money or money back</div>
+              <div className="text-2xl font-bold text-white font-heading mb-2">
+                $5K+ Guarantee
+              </div>
+              <div className="text-white/80 font-body">
+                Save money or money back
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white font-heading mb-2">Day 1 Results</div>
-              <div className="text-white/80 font-body">Techs productive immediately</div>
+              <div className="text-2xl font-bold text-white font-heading mb-2">
+                Day 1 Results
+              </div>
+              <div className="text-white/80 font-body">
+                Techs productive immediately
+              </div>
             </div>
           </div>
 
