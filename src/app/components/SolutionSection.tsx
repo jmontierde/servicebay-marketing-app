@@ -59,7 +59,7 @@ const SolutionSection = () => {
         >
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
-              Built by Shop Owners Who Got Fed Up
+              Expertly Built by Those Who Ran the Shops
             </h2>
             <motion.div
               className="max-w-2xl mx-auto bg-card border border-border rounded-lg p-6"
@@ -75,7 +75,7 @@ const SolutionSection = () => {
                   <div className="font-semibold text-foreground">
                     Barry, Founder
                   </div>
-                  <div className="text-muted-foreground">
+                  <div className="text-muted-foreground font-semibold">
                     "I ran a shop for 20 years. I built this to solve MY
                     problems."
                   </div>
