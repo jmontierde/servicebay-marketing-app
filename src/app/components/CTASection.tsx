@@ -1,5 +1,5 @@
 import { Button } from "@ui/button";
-import { Calculator, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Calculator, Clock } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -75,11 +75,6 @@ const CTASection = () => {
             <h3 className="text-2xl font-bold text-white mb-4">
               If you're waiting for Fullbay to load, we need to talk.
             </h3>
-            <p className="text-lg text-white/90 mb-6">
-              The current design says "We're a cool tech company."
-              <br />
-              It should say "We'll make your shop more profitable TODAY."
-            </p>
             <div className="text-accent-foreground font-semibold text-xl">
               Your transformation starts with one click.
             </div>

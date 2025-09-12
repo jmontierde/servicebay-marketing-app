@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { X, Clock, DollarSign, AlertTriangle } from "lucide-react";
+import { AlertTriangle, Clock, DollarSign, X } from "lucide-react";
 
 const ProblemSection = () => {
   const problems = [
     {
       icon: Clock,
-      title: "Fullbay takes forever to load",
+      title: "Our dispatch system takes forever to  load",
       description: "(again)",
     },
     {
