@@ -50,11 +50,7 @@ RUN chown -R nextjs:nodejs /app
 USER nextjs
 
 # Expose port
-EXPOSE 3000
-
-# Set environment variables
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+EXPOSE 8080
 
 # Start the application
 CMD ["node", "server.js"]
