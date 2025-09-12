@@ -63,7 +63,7 @@ const TestimonialSection = () => {
 
                 <Quote className="w-8 h-8 text-primary mb-6" />
                 <blockquote className="text-lg text-card-foreground font-body mb-6 leading-relaxed">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
                 {/* Results */}
@@ -108,7 +108,7 @@ const TestimonialSection = () => {
               Simple Over Sophisticated
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Shop owners don't want AI. They want to go home at 5 PM with more
+              Shop owners don&rsquo;t want AI. They want to go home at 5 PM with more
               money in their pocket. We show them that transformation, not the
               technology.
             </p>

@@ -1,4 +1,4 @@
-import { DollarSign, Calculator, TrendingUp, Award } from "lucide-react";
+import { Calculator } from "lucide-react";
 import { Card, CardContent } from "@ui/card";
 import { Button } from "@ui/button";
 
@@ -25,7 +25,7 @@ const ROISection = () => {
           <Card className="bg-red-50/10 border-red-300/30 backdrop-blur-sm">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-red-200 mb-6 text-center">
-                Money You're Losing Every Month
+                Money You&rsquo;re Losing Every Month
               </h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
@@ -105,13 +105,13 @@ const ROISection = () => {
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">Case Study</h3>
             <h4 className="text-xl font-semibold text-accent-foreground mb-4">
-              "How Johnson Diesel Went from 30-Minute Orders to 2"
+              &ldquo;How Johnson Diesel Went from 30-Minute Orders to 2&rdquo;
             </h4>
             <p className="text-lg text-white/90 mb-4">
-              "Before ServiceBay, creating a service order took our techs 30+
+              &ldquo;Before ServiceBay, creating a service order took our techs 30+
               minutes. They had to stop working, clean their hands, type
               everything out. Now they just talk while they work. 2 minutes,
-              done."
+              done.&rdquo;
             </p>
             <div className="text-white/70">
               — Mike Johnson, Owner, Johnson Diesel
@@ -145,10 +145,10 @@ const ROISection = () => {
             <div className="text-xl font-bold mb-2">
               Save $5K/month or money back
             </div>
-            <div className="text-white/80 mb-4">That's our guarantee</div>
+            <div className="text-white/80 mb-4">That&rsquo;s our guarantee</div>
             <Button size="lg" variant="cta" className="text-lg px-8 py-4">
               <Calculator className="mr-2" />
-              See Your Shop's Potential Savings
+              See Your Shop&rsquo;s Potential Savings
             </Button>
           </div>
         </div>
