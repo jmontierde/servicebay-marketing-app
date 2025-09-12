@@ -1,5 +1,5 @@
 import { Button } from "@ui/button";
-import { Calculator, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Calculator, Clock } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -73,13 +73,8 @@ const CTASection = () => {
           {/* Final Hook */}
           <div className="mt-16 bg-white/10 border border-white/20 rounded-xl p-8">
             <h3 className="text-2xl font-bold text-white mb-4">
-              If you&rsquo;re waiting for Fullbay to load, we need to talk.
+              If you're waiting for your old dispatch systen to load, we need to talk.
             </h3>
-            <p className="text-lg text-white/90 mb-6">
-              The current design says &ldquo;We&rsquo;re a cool tech company.&rdquo;
-            <br />
-            It should say &ldquo;We&rsquo;ll make your shop more profitable TODAY.&rdquo;
-            </p>
             <div className="text-accent-foreground font-semibold text-xl">
               Your transformation starts with one click.
             </div>

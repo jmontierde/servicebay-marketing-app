@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mic, Brain, DollarSign } from "lucide-react";
+import { Brain, DollarSign, Mic } from "lucide-react";
 
 const SolutionSection = () => {
   const steps = [
@@ -29,19 +29,19 @@ const SolutionSection = () => {
 
   const benefits = [
     {
-      title: "Never Miss Billing Another Part",
-      subtitle: "Instead of 'Voice-to-Service Order'",
+      title: "Never Miss Billing A Part",
+      // subtitle: "Instead of 'Voice-to-Service Order'",
       description:
         "Techs just talk. AI ensures every part, every hour gets on the invoice.",
     },
     {
       title: "Right Tech, Right Job, Every Time",
-      subtitle: "Instead of 'AI Dispatcher Copilot'",
+      // subtitle: "Instead of 'AI Dispatcher Copilot'",
       description: "AI knows who's fastest at what. No more guessing.",
     },
     {
-      title: "Sell More PM Work",
-      subtitle: "Instead of 'Predictive Maintenance'",
+      title: "Stop Breakdowns Before It Happens",
+      // subtitle: "Instead of 'Predictive Maintenance'",
       description:
         "AI tells you what's about to break. Customers love proactive shops.",
     },
@@ -59,7 +59,7 @@ const SolutionSection = () => {
         >
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
-              Built by Shop Owners Who Got Fed Up
+              Expertly Built by Those Who Ran the Shops
             </h2>
             <motion.div
               className="max-w-2xl mx-auto bg-card border border-border rounded-lg p-6"
@@ -75,9 +75,9 @@ const SolutionSection = () => {
                   <div className="font-semibold text-foreground">
                     Barry, Founder
                   </div>
-                  <div className="text-muted-foreground">
-                    &ldquo;I ran a shop for 20 years. I built this to solve MY
-                    problems.&rdquo;
+                  <div className="text-muted-foreground font-semibold">
+                    "I ran a shop for 20 years. I built this to solve MY
+                    problems."
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@ const SolutionSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Features Reframed as Benefits
+            Built Around Your Needs
           </motion.h3>
 
           <div className="space-y-12">
@@ -155,7 +155,7 @@ const SolutionSection = () => {
                 }}
               >
                 <div className="text-sm text-accent font-medium mb-2">
-                  {benefit.subtitle}
+                  {/* {benefit.subtitle} */}
                 </div>
                 <h4 className="text-2xl font-bold font-heading text-foreground mb-4">
                   {benefit.title}

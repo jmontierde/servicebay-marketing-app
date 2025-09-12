@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { X, Clock, DollarSign, AlertTriangle } from "lucide-react";
+import { AlertTriangle, Clock, DollarSign, X } from "lucide-react";
 
 const ProblemSection = () => {
   const problems = [
     {
       icon: Clock,
-      title: "Fullbay takes forever to load",
+      title: "Our dispatch system takes forever to  load",
       description: "(again)",
     },
     {
@@ -41,7 +41,7 @@ const ProblemSection = () => {
             <span className="text-primary"> Daily Battle</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-body">
-            If you&rsquo;re waiting for Fullbay to load, we need to talk.
+            If you're waiting for your dispatch system to load, we need to talk.
           </p>
         </motion.div>
 
