@@ -1,26 +1,26 @@
-import { AlertTriangle, Clock, Volume2, MessageSquare } from "lucide-react";
+import { X, Clock, DollarSign, AlertTriangle } from "lucide-react";
 
 const ProblemSection = () => {
   const problems = [
     {
       icon: Clock,
-      title: "Slow Dispatch",
-      description: "45-minute dispatch times killing productivity and customer satisfaction"
+      title: "Fullbay takes forever to load",
+      description: "(again)"
     },
     {
-      icon: Volume2,
-      title: "Noisy Environments",
-      description: "Can't use traditional voice tools in loud workshop environments"
-    },
-    {
-      icon: MessageSquare,
-      title: "Scattered Communication", 
-      description: "Customer updates lost in phone calls, texts, and paper notes"
+      icon: DollarSign,
+      title: "Techs forgot to add parts to invoice",
+      description: "(again)"
     },
     {
       icon: AlertTriangle,
-      title: "Reactive Breakdowns",
-      description: "Emergency repairs cost 3x more than preventive maintenance"
+      title: "Another comeback, something missed",
+      description: "(again)"
+    },
+    {
+      icon: Clock,
+      title: "You're doing invoices at 9 PM",
+      description: "(again)"
     }
   ];
 
@@ -29,29 +29,60 @@ const ProblemSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
-            Fleet repair shops run on 
-            <span className="text-primary"> thin margins</span> and 
-            <span className="text-primary"> outdated systems</span>
+            We Know Your
+            <span className="text-primary"> Daily Battle</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-body">
-            Traditional repair shop management creates bottlenecks that cost time, money, and customer trust.
+            If you're waiting for Fullbay to load, we need to talk.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {problems.map((problem, index) => (
-            <div key={index} className="bg-card rounded-xl p-6 shadow-card border border-border">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <problem.icon className="w-6 h-6 text-accent" />
+            <div key={index} className="bg-card rounded-xl p-6 shadow-card border border-red-200">
+              <div className="flex items-center mb-4">
+                <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                  <X className="w-5 h-5 text-red-500" />
+                </div>
+                <problem.icon className="w-6 h-6 text-red-500" />
               </div>
-              <h3 className="text-xl font-semibold font-heading text-card-foreground mb-3">
+              <h3 className="text-lg font-semibold font-heading text-card-foreground mb-1">
                 {problem.title}
               </h3>
-              <p className="text-muted-foreground font-body">
+              <p className="text-red-600 font-body italic">
                 {problem.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Money Lost Section */}
+        <div className="mt-16 bg-red-50 border border-red-200 rounded-xl p-8">
+          <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+            Your Shop is Leaving Money on the Table:
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-red-600">$5,000</div>
+              <div className="text-muted-foreground">Missed parts/month</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-red-600">$3,000</div>
+              <div className="text-muted-foreground">Incorrect labor/month</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-red-600">$2,000</div>
+              <div className="text-muted-foreground">Comeback costs/month</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-red-600">$2,000</div>
+              <div className="text-muted-foreground">Overtime/month</div>
+            </div>
+          </div>
+          <div className="text-center mt-6 p-4 bg-red-100 rounded-lg">
+            <div className="text-3xl font-bold text-red-700">$12,000/month lost</div>
+            <div className="text-muted-foreground">Total money left on the table</div>
+          </div>
         </div>
       </div>
     </section>
