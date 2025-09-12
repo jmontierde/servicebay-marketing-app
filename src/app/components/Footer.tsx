@@ -8,7 +8,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground font-body mb-4 md:mb-0">
-            © 2024 ServiceBay. All rights reserved.
+            ©2025 ServiceBay. All rights reserved.
           </p>
           <div className="flex space-x-6 font-body">
             <a
