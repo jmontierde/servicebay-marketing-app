@@ -76,8 +76,8 @@ const SolutionSection = () => {
                     Barry, Founder
                   </div>
                   <div className="text-muted-foreground font-semibold">
-                    "I ran a shop for 20 years. I built this to solve MY
-                    problems."
+                    &ldquo;I ran a shop for 20 years. I built this to solve MY
+                    problems.&rdquo;
                   </div>
                 </div>
               </div>

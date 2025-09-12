@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import ProblemSection from "./components/ProblemSection";
 import SolutionSection from "./components/SolutionSection";
