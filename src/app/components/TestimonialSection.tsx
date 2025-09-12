@@ -4,29 +4,32 @@ import { Card, CardContent } from "@ui/card";
 const TestimonialSection = () => {
   const testimonials = [
     {
-      quote: "Before ServiceBay, our dispatch took 45 minutes per job. Now it's 5 minutes. That's 8 more jobs per day for our team.",
+      quote:
+        "Before ServiceBay, our dispatch took 45 minutes per job. Now it's 5 minutes. That's 8 more jobs per day for our team.",
       author: "Sarah Mitchell",
       role: "Operations Manager",
       company: "Metro Fleet Services",
       savings: "$12,000/month",
-      metric: "8 more jobs/day"
+      metric: "8 more jobs/day",
     },
     {
-      quote: "The voice commands work perfectly even in our loudest bay. My technicians can create work orders while they're under the truck.",
-      author: "Carlos Rodriguez", 
+      quote:
+        "The voice commands work perfectly even in our loudest bay. My technicians can create work orders while they're under the truck.",
+      author: "Carlos Rodriguez",
       role: "Lead Technician",
       company: "Highway Repair Co",
       savings: "$8,500/month",
-      metric: "No missed parts"
+      metric: "No missed parts",
     },
     {
-      quote: "The predictive maintenance alerts have saved us from 12 major breakdowns this year. The ROI is incredible.",
+      quote:
+        "The predictive maintenance alerts have saved us from 12 major breakdowns this year. The ROI is incredible.",
       author: "Jennifer Park",
       role: "Fleet Director",
       company: "Logistics Express",
       savings: "$15,000/month",
-      metric: "12 breakdowns prevented"
-    }
+      metric: "12 breakdowns prevented",
+    },
   ];
 
   return (
@@ -43,33 +46,45 @@ const TestimonialSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="relative hover:shadow-card transition-all duration-300 bg-card border-border">
+            <Card
+              key={index}
+              className="relative hover:shadow-card transition-all duration-300 bg-card border-border"
+            >
               <CardContent className="p-8">
                 {/* Rating */}
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                    />
                   ))}
                 </div>
-                
+
                 <Quote className="w-8 h-8 text-primary mb-6" />
                 <blockquote className="text-lg text-card-foreground font-body mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
-                
+
                 {/* Results */}
                 <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 mb-6">
                   <div className="grid grid-cols-1 gap-2 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-accent">{testimonial.savings}</div>
-                      <div className="text-xs text-muted-foreground">Monthly Savings</div>
+                      <div className="text-2xl font-bold text-accent">
+                        {testimonial.savings}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Monthly Savings
+                      </div>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-foreground">{testimonial.metric}</div>
+                      <div className="text-sm font-semibold text-foreground">
+                        {testimonial.metric}
+                      </div>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="border-t border-border pt-4">
                   <div className="font-semibold font-heading text-foreground">
                     {testimonial.author}
@@ -93,8 +108,9 @@ const TestimonialSection = () => {
               Simple Over Sophisticated
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
-              Shop owners don't want AI. They want to go home at 5 PM with more money in their pocket. 
-              We show them that transformation, not the technology.
+              Shop owners don't want AI. They want to go home at 5 PM with more
+              money in their pocket. We show them that transformation, not the
+              technology.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
@@ -107,7 +123,9 @@ const TestimonialSection = () => {
               </div>
               <div>
                 <div className="text-2xl font-bold text-primary">$10K+</div>
-                <div className="text-muted-foreground">Monthly profit increase</div>
+                <div className="text-muted-foreground">
+                  Monthly profit increase
+                </div>
               </div>
             </div>
           </div>

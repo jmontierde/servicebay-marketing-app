@@ -1,6 +1,8 @@
 import { Button } from "@ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-trucks.jpg";
+import DesktopMockup from "@/assets/desktop-mockup.png";
+import MobileMockup from "@/assets/mobile-mockup.png";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -12,59 +14,78 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-32">
-        <div className="max-w-4xl">
-          <div className="mb-6">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 border border-white/30 text-white font-medium">
-              ✅ Replaces Fullbay Completely
-            </span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold font-heading text-white mb-6 leading-tight">
-            Your Techs Create
-            <br />
-            <span className="text-accent-foreground">Service Orders</span>
-            <br />
-            in 2 Minutes. By Voice.
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl font-body leading-relaxed">
-            Stop losing $10K/month in missed parts. Start billing everything.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-              Watch 2-Minute Demo
-              <ArrowRight className="ml-2" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white/10 border-white/30 text-white hover:bg-white/20">
-              <Play className="mr-2" />
-              Calculate Your Lost Revenue
-            </Button>
-          </div>
-
-          {/* Money Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl">
-            <div className="text-center sm:text-left">
-              <div className="text-3xl font-bold text-white font-heading">$10,500</div>
-              <div className="text-white/80 font-body">Monthly Net Gain</div>
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <div className="max-w-2xl">
+            <div className="mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 border border-white/30 text-white font-medium">
+                🚛 AI-Powered Fleet Management
+              </span>
             </div>
-            <div className="text-center sm:text-left">
-              <div className="text-3xl font-bold text-white font-heading">300+</div>
-              <div className="text-white/80 font-body">Shops Saving Money</div>
-            </div>
-            <div className="text-center sm:text-left">
-              <div className="text-3xl font-bold text-white font-heading">98%</div>
-              <div className="text-white/80 font-body">Parts Billing Rate</div>
+
+            <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 leading-tight">
+              Your Techs Create
+              <br />
+              <span className="text-accent-foreground">Service Orders</span>
+              <br />
+              in 2 Minutes. By Voice.
+            </h1>
+
+            <p className="text-xl md:text-2xl text-white/90 mb-8 font-body leading-relaxed">
+              Stop losing $10K/month in missed parts. Start billing everything.
+            </p>
+
+            {/* Money Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="text-center sm:text-left">
+                <div className="text-3xl font-bold text-white font-heading">
+                  $10,500
+                </div>
+                <div className="text-white/80 font-body">Monthly Net Gain</div>
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="text-3xl font-bold text-white font-heading">
+                  300+
+                </div>
+                <div className="text-white/80 font-body">
+                  Shops Saving Money
+                </div>
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="text-3xl font-bold text-white font-heading">
+                  98%
+                </div>
+                <div className="text-white/80 font-body">
+                  Parts Billing Rate
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+          <div className="relative hidden lg:flex lg:items-center lg:justify-center">
+            {/* Desktop Dashboard Mockup */}
+            <div className="relative z-10">
+              <Image
+                src={DesktopMockup}
+                alt="ServiceBay Desktop Dashboard"
+                className="w-[40rem] h-auto rounded-xl shadow-2xl transform rotate-[-6deg]"
+                width={640}
+                height={400}
+              />
+            </div>
+
+            {/* Mobile Mockup Overlay */}
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 z-20">
+              <Image
+                src={MobileMockup}
+                alt="ServiceBay Mobile App"
+                className="w-64 h-auto rounded-3xl shadow-2xl transform rotate-[8deg]"
+                width={256}
+                height={500}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

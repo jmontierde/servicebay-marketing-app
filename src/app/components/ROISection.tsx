@@ -30,24 +30,36 @@ const ROISection = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-white/80">Missed parts:</span>
-                  <span className="text-2xl font-bold text-red-300">$5,000</span>
+                  <span className="text-2xl font-bold text-red-300">
+                    $5,000
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white/80">Incorrect labor:</span>
-                  <span className="text-2xl font-bold text-red-300">$3,000</span>
+                  <span className="text-2xl font-bold text-red-300">
+                    $3,000
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white/80">Comeback costs:</span>
-                  <span className="text-2xl font-bold text-red-300">$2,000</span>
+                  <span className="text-2xl font-bold text-red-300">
+                    $2,000
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white/80">Overtime inefficiency:</span>
-                  <span className="text-2xl font-bold text-red-300">$2,000</span>
+                  <span className="text-2xl font-bold text-red-300">
+                    $2,000
+                  </span>
                 </div>
                 <div className="border-t border-red-300/30 pt-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-white">Total Lost:</span>
-                    <span className="text-3xl font-bold text-red-300">$12,000</span>
+                    <span className="text-lg font-semibold text-white">
+                      Total Lost:
+                    </span>
+                    <span className="text-3xl font-bold text-red-300">
+                      $12,000
+                    </span>
                   </div>
                 </div>
               </div>
@@ -66,12 +78,18 @@ const ROISection = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white/80">Money Recovered:</span>
-                  <span className="text-2xl font-bold text-green-300">+$12,000</span>
+                  <span className="text-2xl font-bold text-green-300">
+                    +$12,000
+                  </span>
                 </div>
                 <div className="border-t border-green-300/30 pt-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-white">Your Net Gain:</span>
-                    <span className="text-3xl font-bold text-green-300">$10,500</span>
+                    <span className="text-lg font-semibold text-white">
+                      Your Net Gain:
+                    </span>
+                    <span className="text-3xl font-bold text-green-300">
+                      $10,500
+                    </span>
                   </div>
                   <div className="text-center text-green-200 text-sm mt-2">
                     Every single month
@@ -90,24 +108,31 @@ const ROISection = () => {
               "How Johnson Diesel Went from 30-Minute Orders to 2"
             </h4>
             <p className="text-lg text-white/90 mb-4">
-              "Before ServiceBay, creating a service order took our techs 30+ minutes. 
-              They had to stop working, clean their hands, type everything out. 
-              Now they just talk while they work. 2 minutes, done."
+              "Before ServiceBay, creating a service order took our techs 30+
+              minutes. They had to stop working, clean their hands, type
+              everything out. Now they just talk while they work. 2 minutes,
+              done."
             </p>
             <div className="text-white/70">
               — Mike Johnson, Owner, Johnson Diesel
             </div>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-accent-foreground">$8,000</div>
+                <div className="text-2xl font-bold text-accent-foreground">
+                  $8,000
+                </div>
                 <div className="text-sm text-white/70">Monthly savings</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-accent-foreground">12 more</div>
+                <div className="text-2xl font-bold text-accent-foreground">
+                  12 more
+                </div>
                 <div className="text-sm text-white/70">Jobs per day</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-accent-foreground">2 weeks</div>
+                <div className="text-2xl font-bold text-accent-foreground">
+                  2 weeks
+                </div>
                 <div className="text-sm text-white/70">To full ROI</div>
               </div>
             </div>
@@ -117,7 +142,9 @@ const ROISection = () => {
         {/* CTA */}
         <div className="text-center">
           <div className="bg-accent/20 border border-accent/30 rounded-lg p-6 inline-block">
-            <div className="text-xl font-bold mb-2">Save $5K/month or money back</div>
+            <div className="text-xl font-bold mb-2">
+              Save $5K/month or money back
+            </div>
             <div className="text-white/80 mb-4">That's our guarantee</div>
             <Button size="lg" variant="cta" className="text-lg px-8 py-4">
               <Calculator className="mr-2" />
