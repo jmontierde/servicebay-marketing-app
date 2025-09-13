@@ -1,6 +1,5 @@
 "use client";
-import { Button } from "@ui/button";
-import { ArrowRight, Calculator, Clock } from "lucide-react";
+
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "../hooks/use-scroll-animation";
 
@@ -46,38 +45,6 @@ const CTASection = () => {
               300+ shops are already saving $5,000/month. Your shop should be
               next.
             </p>
-          </motion.div>
-
-          <motion.div
-            ref={buttonsRef}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
-            initial={{ opacity: 0, y: 40 }}
-            animate={
-              buttonsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
-            }
-            transition={{
-              delay: buttonsInView ? 0.3 : 0,
-              duration: 0.7,
-              ease: "easeOut",
-            }}
-          >
-            <Button
-              size="lg"
-              variant="cta"
-              className="text-xl px-10 py-5 font-semibold"
-            >
-              <Calculator className="mr-3" />
-              See Your Shop&rsquo;s Potential Savings
-              <ArrowRight className="ml-3" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-xl px-10 py-5 bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold"
-            >
-              <Clock className="mr-2" />
-              Watch 2-Minute Demo
-            </Button>
           </motion.div>
 
           <motion.div
