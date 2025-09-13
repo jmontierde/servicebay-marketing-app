@@ -1,8 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { Brain, DollarSign, Mic } from "lucide-react";
+import { useScrollAnimation } from "../hooks/use-scroll-animation";
 
 const SolutionSection = () => {
+  const { ref: guideRef, isInView: guideInView } = useScrollAnimation({ threshold: 0.3 });
+  const { ref: stepsRef, isInView: stepsInView } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: benefitsRef, isInView: benefitsInView } = useScrollAnimation({ threshold: 0.2 });
+
   const steps = [
     {
       step: "1",
@@ -52,9 +57,10 @@ const SolutionSection = () => {
       <div className="container mx-auto px-6">
         {/* Guide Section */}
         <motion.div
+          ref={guideRef}
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={guideInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <div className="mb-8">
@@ -64,8 +70,8 @@ const SolutionSection = () => {
             <motion.div
               className="max-w-2xl mx-auto bg-card border border-border rounded-lg p-6"
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              animate={guideInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+              transition={{ delay: guideInView ? 0.3 : 0, duration: 0.6 }}
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
@@ -90,12 +96,12 @@ const SolutionSection = () => {
         </motion.div>
 
         {/* 3-Step Plan */}
-        <div className="mb-20">
+        <div ref={stepsRef} className="mb-20">
           <motion.h3
             className="text-3xl font-bold font-heading text-center text-foreground mb-12"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            animate={stepsInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: stepsInView ? 0.2 : 0, duration: 0.6 }}
           >
             The 3-Step Plan
           </motion.h3>
@@ -106,9 +112,9 @@ const SolutionSection = () => {
                 key={index}
                 className="text-center"
                 initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={stepsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{
-                  delay: 0.3 + index * 0.2,
+                  delay: stepsInView ? 0.3 + index * 0.2 : 0,
                   duration: 0.7,
                   ease: "easeOut",
                 }}
@@ -131,12 +137,12 @@ const SolutionSection = () => {
         </div>
 
         {/* Benefits Reframed */}
-        <div>
+        <div ref={benefitsRef}>
           <motion.h3
             className="text-3xl font-bold font-heading text-center text-foreground mb-12"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            animate={benefitsInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: benefitsInView ? 0.2 : 0, duration: 0.6 }}
           >
             Built Around Your Needs
           </motion.h3>
@@ -147,9 +153,9 @@ const SolutionSection = () => {
                 key={index}
                 className="bg-card border border-border rounded-xl p-8"
                 initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={benefitsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{
-                  delay: 0.4 + index * 0.3,
+                  delay: benefitsInView ? 0.4 + index * 0.3 : 0,
                   duration: 0.7,
                   ease: "easeOut",
                 }}

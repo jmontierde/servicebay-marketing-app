@@ -1,8 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { AlertTriangle, Clock, DollarSign, X } from "lucide-react";
+import { useScrollAnimation } from "../hooks/use-scroll-animation";
 
 const ProblemSection = () => {
+  const { ref: headingRef, isInView: headingInView } = useScrollAnimation({ threshold: 0.3 });
+  const { ref: gridRef, isInView: gridInView } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: moneyRef, isInView: moneyInView } = useScrollAnimation({ threshold: 0.3 });
+
   const problems = [
     {
       icon: Clock,
@@ -31,9 +36,10 @@ const ProblemSection = () => {
       <div className="container mx-auto px-6">
         {/* Heading */}
         <motion.div
+          ref={headingRef}
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
@@ -46,15 +52,15 @@ const ProblemSection = () => {
         </motion.div>
 
         {/* Problems Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {problems.map((problem, index) => (
             <motion.div
               key={index}
               className="bg-card rounded-xl p-6 shadow-card border border-red-200"
               initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={gridInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{
-                delay: index * 0.2,
+                delay: gridInView ? index * 0.2 : 0,
                 duration: 0.7,
                 ease: "easeOut",
               }}
@@ -77,10 +83,11 @@ const ProblemSection = () => {
 
         {/* Money Lost Section */}
         <motion.div
+          ref={moneyRef}
           className="mt-16 bg-red-50 border border-red-200 rounded-xl p-8"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+          animate={moneyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ delay: moneyInView ? 0.2 : 0, duration: 0.8, ease: "easeOut" }}
         >
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">
             Your Shop is Leaving Money on the Table:
@@ -97,8 +104,8 @@ const ProblemSection = () => {
                 key={i}
                 className="text-center"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + i * 0.2, duration: 0.6 }}
+                animate={moneyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ delay: moneyInView ? 0.4 + i * 0.2 : 0, duration: 0.6 }}
               >
                 <div className="text-2xl font-bold text-red-600">
                   {item.value}
@@ -111,8 +118,8 @@ const ProblemSection = () => {
           <motion.div
             className="text-center mt-6 p-4 bg-red-100 rounded-lg"
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2, duration: 0.6 }}
+            animate={moneyInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ delay: moneyInView ? 1.2 : 0, duration: 0.6 }}
           >
             <div className="text-3xl font-bold text-red-700">
               $12,000/month lost
