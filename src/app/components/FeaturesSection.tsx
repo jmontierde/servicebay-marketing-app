@@ -1,3 +1,4 @@
+"use client";
 import {
   Mic2,
   Users,
@@ -7,7 +8,12 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Card, CardContent } from "@ui/card";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "../hooks/use-scroll-animation";
 const FeaturesSection = () => {
+  const { ref: headingRef, isInView: headingInView } = useScrollAnimation({ threshold: 0.3 });
+  const { ref: gridRef, isInView: gridInView } = useScrollAnimation({ threshold: 0.2 });
+
   const features = [
     {
       icon: Mic2,
@@ -50,7 +56,13 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-24 bg-gradient-section">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <motion.div
+          ref={headingRef}
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
             Why choose us?
           </h2>
@@ -58,26 +70,34 @@ const FeaturesSection = () => {
             Everything you need to run a modern, efficient fleet repair
             operation.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group hover:shadow-card transition-all duration-300 border-border/50"
+              initial={{ opacity: 0, y: 40 }}
+              animate={gridInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{
+                delay: gridInView ? index * 0.1 : 0,
+                duration: 0.6,
+                ease: "easeOut",
+              }}
             >
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <feature.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold font-heading text-card-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground font-body">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="group hover:shadow-card transition-all duration-300 border-border/50 h-full">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <feature.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold font-heading text-card-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground font-body">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

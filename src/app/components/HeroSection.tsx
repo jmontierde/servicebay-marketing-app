@@ -1,10 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
-import DesktopMockup from "@/assets/desktop-mockup.png";
-import MobileMockup from "@/assets/mobile-mockup.png";
+import DesktopMockup from "@/assets/desktop-mockup1.png";
+import MobileMockup from "@/assets/mobile-mockup1.png";
 import Image from "next/image";
+import { useScrollAnimation } from "../hooks/use-scroll-animation";
 
 const HeroSection = () => {
+  const { ref: textRef, isInView: textInView } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: imageRef, isInView: imageInView } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: statsRef, isInView: statsInView } = useScrollAnimation({ threshold: 0.3 });
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden relative">
       {/* Background Pattern */}
@@ -18,9 +23,10 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
+            ref={textRef}
             className="max-w-2xl"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={textInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="mb-6">
@@ -43,11 +49,11 @@ const HeroSection = () => {
             </p>
 
             {/* Money Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <motion.div
                 className="text-center sm:text-left"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ delay: 0.3, duration: 0.7 }}
               >
                 <div className="text-3xl font-bold text-white font-heading">
@@ -59,7 +65,7 @@ const HeroSection = () => {
               <motion.div
                 className="text-center sm:text-left"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ delay: 0.5, duration: 0.7 }}
               >
                 <div className="text-3xl font-bold text-white font-heading">
@@ -73,7 +79,7 @@ const HeroSection = () => {
               <motion.div
                 className="text-center sm:text-left"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ delay: 0.7, duration: 0.7 }}
               >
                 <div className="text-3xl font-bold text-white font-heading">
@@ -88,9 +94,10 @@ const HeroSection = () => {
 
           {/* Right Column - Mockups */}
           <motion.div
+            ref={imageRef}
             className="relative hidden lg:flex lg:items-center lg:justify-center"
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={imageInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Desktop Dashboard Mockup */}
@@ -108,7 +115,7 @@ const HeroSection = () => {
             <motion.div
               className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 z-20"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={imageInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <Image
