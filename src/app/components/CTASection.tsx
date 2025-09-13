@@ -5,10 +5,18 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "../hooks/use-scroll-animation";
 
 const CTASection = () => {
-  const { ref: headingRef, isInView: headingInView } = useScrollAnimation({ threshold: 0.3 });
-  const { ref: buttonsRef, isInView: buttonsInView } = useScrollAnimation({ threshold: 0.3 });
-  const { ref: statsRef, isInView: statsInView } = useScrollAnimation({ threshold: 0.3 });
-  const { ref: hookRef, isInView: hookInView } = useScrollAnimation({ threshold: 0.3 });
+  const { ref: headingRef, isInView: headingInView } = useScrollAnimation({
+    threshold: 0.3,
+  });
+  const { ref: buttonsRef, isInView: buttonsInView } = useScrollAnimation({
+    threshold: 0.3,
+  });
+  const { ref: statsRef, isInView: statsInView } = useScrollAnimation({
+    threshold: 0.3,
+  });
+  const { ref: hookRef, isInView: hookInView } = useScrollAnimation({
+    threshold: 0.3,
+  });
 
   return (
     <section className="py-24 bg-gradient-hero relative overflow-hidden">
@@ -23,7 +31,9 @@ const CTASection = () => {
           <motion.div
             ref={headingRef}
             initial={{ opacity: 0, y: 30 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <h2 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6">
@@ -42,8 +52,14 @@ const CTASection = () => {
             ref={buttonsRef}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
             initial={{ opacity: 0, y: 40 }}
-            animate={buttonsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{ delay: buttonsInView ? 0.3 : 0, duration: 0.7, ease: "easeOut" }}
+            animate={
+              buttonsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
+            transition={{
+              delay: buttonsInView ? 0.3 : 0,
+              duration: 0.7,
+              ease: "easeOut",
+            }}
           >
             <Button
               size="lg"
@@ -69,19 +85,34 @@ const CTASection = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ delay: statsInView ? 0.5 : 0, duration: 0.7, ease: "easeOut" }}
+            transition={{
+              delay: statsInView ? 0.5 : 0,
+              duration: 0.7,
+              ease: "easeOut",
+            }}
           >
             {[
               { title: "Complete Setup", description: "We migrate everything" },
-              { title: "$5K+ Guarantee", description: "Save money or money back" },
-              { title: "Day 1 Results", description: "Techs productive immediately" }
+              {
+                title: "$5K+ Guarantee",
+                description: "Save money or money back",
+              },
+              {
+                title: "Day 1 Results",
+                description: "Techs productive immediately",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
                 className="text-center"
                 initial={{ opacity: 0, y: 20 }}
-                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: statsInView ? 0.7 + index * 0.1 : 0, duration: 0.5 }}
+                animate={
+                  statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{
+                  delay: statsInView ? 0.7 + index * 0.1 : 0,
+                  duration: 0.5,
+                }}
               >
                 <div className="text-2xl font-bold text-white font-heading mb-2">
                   {item.title}
@@ -98,11 +129,20 @@ const CTASection = () => {
             ref={hookRef}
             className="mt-16 bg-white/10 border border-white/20 rounded-xl p-8"
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={hookInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ delay: hookInView ? 0.8 : 0, duration: 0.6, ease: "easeOut" }}
+            animate={
+              hookInView
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0.95 }
+            }
+            transition={{
+              delay: hookInView ? 0.8 : 0,
+              duration: 0.6,
+              ease: "easeOut",
+            }}
           >
             <h3 className="text-2xl font-bold text-white mb-4">
-              If you&rsquo;re waiting for your old dispatch systen to load, we need to talk.
+              If you&rsquo;re waiting for your old dispatch systen to load, we
+              need to talk.
             </h3>
             <div className="text-accent-foreground font-semibold text-xl">
               Your transformation starts with one click.
